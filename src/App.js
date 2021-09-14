@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      color: ""
+      color: "#fff"
     }
   }
 
@@ -26,6 +26,7 @@ class App extends Component {
     return (
       <div>
         { }
+        <button >Change Color</button>
       </div>
     )
   }
