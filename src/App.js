@@ -9,6 +9,8 @@ class App extends Component {
     this.state = {
       color: " "
     }
+
+    this.handleChange = this.handleChange.bind(this)
   }
 
   //Axios get request
@@ -20,13 +22,22 @@ class App extends Component {
       })
   }
 
+  changeColor(color) {
+    this.setState({ color });
+  }
+
+  handleChange(e) {
+    const newColor = e.target.value;
+    this.props.changeColor(newColor)
+  }
+
 
   render() {
 
     return (
       <div>
         { }
-        <button >Change Color</button>
+        <button onChange="{this.handleChange}">Change Color</button>
       </div>
     )
   }
