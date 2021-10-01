@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      color: " "
+      color: []
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -20,15 +20,20 @@ class App extends Component {
         // console.log(res);
         this.setState({ color: res.data.colors[0].hex });
       })
+    // console.log(this.state.color[0])
   }
 
-  changeColor(color) {
-    this.setState({ color });
-  }
+  // changeColor(color) {
+  //   this.setState({ color });
+  // }
 
   handleChange(e) {
     const newColor = e.target.value;
-    this.props.changeColor(newColor)
+    this.changeColor(newColor)
+  }
+
+  nextColor() {
+    console.log(this.state.color)
   }
 
 
@@ -37,7 +42,10 @@ class App extends Component {
     return (
       <div>
         { }
-        <button onChange="{this.handleChange}">Change Color</button>
+        <button onClick={this.nextColor()}>Change Color</button>
+        <div height="100px" width="100px" style={`background-color: ${this.state.color}`}>
+
+        </div >
       </div>
     )
   }
